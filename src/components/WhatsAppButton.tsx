@@ -1,15 +1,8 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "5521968929102";
-  const message =
-    "Olá! Gostaria de conhecer as soluções tecnológicas da InovaX";
-
   const handleWhatsAppClick = () => {
-    const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(url, "_blank");
+    window.open("https://api.whatsapp.com/send/?phone=5521968929102&text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas%20da%20InovaX", "_blank");
   };
 
   return (

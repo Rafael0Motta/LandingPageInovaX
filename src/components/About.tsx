@@ -14,7 +14,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-slide-in-left">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Sobre a <span className="gradient-text">InovaX</span>
+              Sobre a <span className="text-white">InovaX</span>
             </h2>
 
             <p className="text-lg text-muted-foreground mb-6">

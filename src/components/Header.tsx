@@ -6,13 +6,7 @@ const Header = () => {
   };
 
   const handleWhatsAppContact = () => {
-    const phoneNumber = "5521968929102";
-    const message =
-      "Olá! Gostaria de conhecer as soluções tecnológicas da InovaX";
-    const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(url, "_blank");
+    window.open("https://api.whatsapp.com/send/?phone=5521968929102&text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas%20da%20InovaX", "_blank");
   };
 
   return (
@@ -20,7 +14,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-primary hover:scale-105 transition-transform duration-300">
-            InovaX
+            <span className="text-white">InovaX</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-6">

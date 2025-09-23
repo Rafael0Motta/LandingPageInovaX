@@ -6,7 +6,7 @@ const Hero = () => {
   const handleWhatsAppContact = () => {
     const phoneNumber = "5521968929102";
     const message =
-      "Olá! Gostaria de conhecer as soluções tecnológicas da InovaX";
+  "Olá! Gostaria de conhecer as soluções tecnológicas da " + "%cInovaX";
     const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(
       message
     )}`;
@@ -33,17 +33,14 @@ const Hero = () => {
         <div className="absolute top-1/2 left-10 w-16 h-16 bg-primary/30 rounded-full animate-pulse-soft"></div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+  <div className="container mx-auto px-4 text-center relative z-10" style={{ margin: "150px 0" }}>
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Transforme seu negócio com{" "}
-            <span className="text-primary font-extrabold">
-              tecnologia avançada
-            </span>
+            Inove com Tecnologia
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            A InovaX desenvolve soluções tecnológicas completas: sites modernos,
+            A <span className="text-white">InovaX</span> desenvolve soluções tecnológicas completas: sites modernos,
             sistemas robustos, chatbots inteligentes, agentes de IA e automações
             que revolucionam sua empresa.
           </p>
@@ -52,7 +49,7 @@ const Hero = () => {
             <Button
               size="lg"
               onClick={handleWhatsAppContact}
-              className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 glow-primary group"
+              className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 glow-primary group w-full text-center"
             >
               Começar Agora
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -66,7 +63,7 @@ const Hero = () => {
                   .getElementById("services")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="text-lg px-8 py-6 border-primary/50 hover:border-primary"
+              className="text-lg px-8 py-6 border-primary/50 hover:border-primary w-full text-center"
             >
               Ver Serviços
             </Button>

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   MapPin,
@@ -11,10 +12,20 @@ import {
 } from "lucide-react";
 
 const Contact = () => {
+  const [isMobileButton, setIsMobileButton] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobileButton(window.innerWidth <= 500);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const handleWhatsAppContact = () => {
     const phoneNumber = "5521968929102";
     const message =
-      "Olá! Gostaria de conhecer as soluções tecnológicas da InovaX";
+  "Olá! Gostaria de conhecer as soluções tecnológicas da " + "%cInovaX";
     const url = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(
       message
     )}`;
@@ -69,7 +80,7 @@ const Contact = () => {
             Negócio?
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Junte-se a mais de 50 empresas que já revolucionaram seus processos
+            Junte-se a mais de 5 empresas que já revolucionaram seus processos
             com nossas soluções tecnológicas. Fale conosco agora e descubra como
             podemos acelerar seu crescimento!
           </p>
@@ -95,12 +106,13 @@ const Contact = () => {
             </p>
 
             <Button
-              onClick={handleWhatsAppContact}
+              onClick={() => window.open("https://api.whatsapp.com/send/?phone=5521968929102&text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20as%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas%20da%20InovaX", "_blank")}
               size="lg"
               className="bg-green-500 hover:bg-green-600 text-white text-xl px-12 py-6 glow-accent animate-pulse-soft group"
+              style={{ width: "100%" }}
             >
               <MessageSquare className="mr-3 w-7 h-7 group-hover:scale-110 transition-transform" />
-              Falar com Especialista Agora
+              {isMobileButton ? "Falar com Especialista" : "Falar com Especialista Agora"}
             </Button>
 
             <div className="flex items-center justify-center gap-2 mt-6 text-green-400">
